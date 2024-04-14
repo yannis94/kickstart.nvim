@@ -27,5 +27,10 @@ return {
 
     vim.keymap.set('n', '<Leader>dt', dap.toggle_breakpoint, { desc = '[D]ebuging [T]oggle breakpoint' })
     vim.keymap.set('n', '<Leader>dc', dap.continue, { desc = '[D]ebuging [C]ontinue' })
+    vim.keymap.set('n', '<Leader>ds', dap.step_over, { desc = '[D]ebuging [S]tep over' })
+    vim.keymap.set('n', '<Leader>di', dap.step_into, { desc = '[D]ebuging [I]nto' })
+    vim.keymap.set('n', '<Leader>do', dap.step_out, { desc = '[D]ebuging [O]ut' })
+    vim.keymap.set('n', '<Leader>dr', dap.repl.open, { desc = '[D]ebuging [R]epl' })
+    vim.keymap.set('n', '<Leader>dl', dap.run_last, { desc = '[D]ebuging [L]ast' })
   end,
 }

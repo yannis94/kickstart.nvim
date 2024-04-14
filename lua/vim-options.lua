@@ -1,3 +1,8 @@
+-- Set <space> as the leader key
+-- See `:help mapleader`
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+vim.opt.guicursor = ''
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 
 -- Set to true if you have a Nerd Font installed

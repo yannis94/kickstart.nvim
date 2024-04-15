@@ -5,6 +5,7 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
 --
 -- NOTE: Kickstart remap
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -14,6 +15,8 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>n', ':cnext<CR>', { desc = 'Go [N]ext item in quickfix list' })
+vim.keymap.set('n', '<leader>p', ':cprev<CR>', { desc = 'Go [P]revious item in quickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which

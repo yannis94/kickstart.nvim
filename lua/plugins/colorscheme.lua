@@ -25,6 +25,14 @@ return {
   {
     'rose-pine/neovim',
     config = function()
+      require('rose-pine').setup {
+        variant = 'auto',
+        extend_background_behind_borders = true,
+
+        styles = {
+          transparency = false,
+        },
+      }
       vim.cmd.colorscheme 'rose-pine'
     end,
   },

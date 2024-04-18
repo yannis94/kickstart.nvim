@@ -32,5 +32,7 @@ return {
     vim.keymap.set('n', '<Leader>do', dap.step_out, { desc = '[D]ebuging [O]ut' })
     vim.keymap.set('n', '<Leader>dr', dap.repl.open, { desc = '[D]ebuging [R]epl' })
     vim.keymap.set('n', '<Leader>dl', dap.run_last, { desc = '[D]ebuging [L]ast' })
+    vim.keymap.set('n', '<Leader>dO', dapui.open, { desc = '[D]ebuging [O]pen' })
+    vim.keymap.set('n', '<Leader>dC', dapui.close, { desc = '[D]ebuging [C]lose' })
   end,
 }

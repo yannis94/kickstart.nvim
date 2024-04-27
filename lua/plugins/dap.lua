@@ -1,16 +1,38 @@
 return {
   'mfussenegger/nvim-dap',
   dependencies = {
+    -- ui
     'rcarriga/nvim-dap-ui',
-    'leoluz/nvim-dap-go',
     'nvim-neotest/nvim-nio',
+
+    -- Installs the debug adapters for you
+    'williamboman/mason.nvim',
+    'jay-babu/mason-nvim-dap.nvim',
+
+    -- go debugger
+    'leoluz/nvim-dap-go',
   },
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
 
+    require('mason-nvim-dap').setup {
+      -- Makes a best effort to setup the various debuggers with
+      -- reasonable debug configurations
+      automatic_setup = true,
+
+      -- You can provide additional configuration to the handlers,
+      -- see mason-nvim-dap README for more information
+      handlers = {},
+
+      -- You'll need to check that you have the required things installed
+      -- online, please don't ask me how to install them :)
+      ensure_installed = {
+        -- Update this to ensure that you have the debuggers for the langs you want
+        'delve',
+      },
+    }
     require('dapui').setup()
-    require('dap-go').setup()
 
     dap.listeners.before.attach.dapui_config = function()
       dapui.open()
@@ -36,5 +58,7 @@ return {
     vim.keymap.set('n', '<Leader>dO', dapui.open, { desc = '[D]ebug [O]pen' })
     vim.keymap.set('n', '<Leader>dC', dapui.close, { desc = '[D]ebug [C]lose' })
     vim.keymap.set('n', '<Leader>dt', dapui.toggle, { desc = '[D]ebug [T]oggle' })
+
+    require('dap-go').setup()
   end,
 }

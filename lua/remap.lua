@@ -56,3 +56,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Rename var in all files
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)

@@ -19,7 +19,11 @@ return {
     'ellisonleao/gruvbox.nvim',
     priority = 1000,
     config = function()
-      -- vim.cmd.colorscheme 'gruvbox'
+      require('gruvbox').setup {
+        terminal_colors = true,
+        transparent_mode = false,
+      }
+      vim.cmd.colorscheme 'gruvbox'
     end,
   },
   {
@@ -33,7 +37,7 @@ return {
           transparency = false,
         },
       }
-      vim.cmd.colorscheme 'rose-pine'
+      -- vim.cmd.colorscheme 'rose-pine'
     end,
   },
 }
